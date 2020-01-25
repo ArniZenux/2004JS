@@ -1,1 +1,5 @@
-console.log("Hello d1");
+
+function myFall(){
+	var hello = "Hello d1.js";
+    document.getElementById("demo").innerHTML = hello;
+}
