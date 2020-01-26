@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h4>Dæmi 3</h4>
+<p>
+	Búið til forrit sem les inn tvær pósitífar heiltölur. Forritið segir til um hvort síðari talan gengur upp í þeirri fyrri.  
+</p>
+
+<h2>Er tala deilanleg?</h2>
+<form>
+	<label>A</label>
+	<input type="text" id="A" ><br>
+	<label>B</label>
+	<input type="text" id="B"><br>
+</form>
+
+<br>
+<button type="button" onclick="deilaFall()">Athuga</button>
+<br>
+<br>
+
+<h3>
+<p id="check"></p>
+</h3>
+
+<script type="text/javascript">
+
+function deilaFall(){
+ 
+	var nr1  = Number(document.getElementById("A").value);
+    var nr2 = Number(document.getElementById("B").value); 
+    
+    var nr3 =  nr1 / nr2;
+    console.log(nr3); 
+
+    if(Number.isInteger(nr3)){
+    	document.getElementById("check").innerHTML = nr2 + " gengur upp í " + nr1;
+    }
+    else{
+    	document.getElementById("check").innerHTML = nr2 + " gengur ekki upp í " + nr1;
+    }   
+}
+
+</script>
+</body>
+</html>
