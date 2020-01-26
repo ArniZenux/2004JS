@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form>
+	<input type="text" id="nr1" name="fyrra_numer">
+</form>
+
+<button type="button" onclick="fet()">Breyta í fet</button>
+<br>
+<button type="button" onclick="tomma()">Breyta í tommu</button>
+<br>
+<br><p id="fet_demo">
+<br>
+<p id="tomma_demo">
+
+<script type="text/javascript">
+
+function fet(){
+	var sum = 0; 
+	var nr1 = Number(document.getElementById("nr1").value);
+    
+    var sum = nr1 * 30.5; 
+
+    document.getElementById("fet_demo").innerHTML = sum + " fet (ft)";
+}
+
+function tomma(){
+	var sum = 0; 
+	var nr1 = Number(document.getElementById("nr1").value);
+    
+    var sum = nr1 * 2.53; 
+
+    document.getElementById("tomma_demo").innerHTML = sum + " tommur (ln)";
+}
+
+
+</script>
+
+</body>
+</html>
