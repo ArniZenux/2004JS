@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h4>Dæmi 2</h4>
+<p>
+	Búið til forrit sem reiknar laun einstaklings. Látið forritið spyrja um tímakaup, fjölda unninnatíma, bónusupphæð og bónusviðmiðun. Heildarlaun má reikna með því að margfalda saman tímakaup og fjölda unninna tíma og leggja bónusupphæð við ef fjöldi unninna tíma er meiri en bónusviðmiðun.  
+</p>
+
+<h2>Laun einstaklings</h2>
+<form>
+	<label>Tímakaup</label>
+	<input type="text" id="timakaup" ><br>
+	<label>Fjöldi tíma</label>
+	<input type="text" id="fjolditima"><br>
+	<label>Yfirvinna</label>
+	<input type="text" id="bonus"><br>
+	<label>Yfirvinnakaup</label>
+	<input type="text" id="vidmidun"><br>
+	
+</form>
+
+<br>
+<button type="button" onclick="launFall()">Reikna</button>
+<br>
+<br>
+
+<h3>
+<p>Heildarlaun án bónus :</p> <p id="heildarlaun"></p>
+</h3>
+
+<h3>
+<p>Heildarlaun með bónus :</p> <p id="bonuslaun"></p>
+</h3>
+
+<script type="text/javascript">
+
+function launFall(){
+	var hLaun = 0; 
+	var tima_bonux = 0; 
+	var timamedbonux = 0;
+	
+	var tima = Number(document.getElementById("timakaup").value);
+    var fjoldi = Number(document.getElementById("fjolditima").value); 
+    var hLaun = tima * fjoldi 
+
+    var bonux = Number(document.getElementById("bonus").value); 
+    var vidmun = Number(document.getElementById("vidmidun").value);
+    
+    var tima_bonux = bonux * vidmun;
+
+    var timamedbonux = hLaun + tima_bonux;
+
+    document.getElementById("heildarlaun").innerHTML = hLaun + " Króna";
+
+    document.getElementById("bonuslaun").innerHTML = timamedbonux + " Króna";
+       
+}
+
+
+</script>
+
+
+
+</body>
+</html>
