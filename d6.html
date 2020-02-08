@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h4>Dæmi 6</h4>
+<p>
+	Endurtekin tákn í textastreng
+    <br>
+    Skrifið forrit sem les inn textasteng og athugar hvort ákveðin röð tákna (þ.e. minni textastrengur) komi fyrir oftar en einu sinni í textastrengnum (þ.e. tvö eða fleiri tákn). Forritið skrifar textastrenginn aftur út þar sem slíkir hlutastrengir eru skrifaðir í hástöfum en önnur tákn í lágstöfum..  
+</p>
+
+<h2>Endurtekin tákn í streng.</h2>
+<form>
+	<label>strengur</label>
+	<input type="text" id="streng" ><br>
+</form>
+
+<br>
+<button type="button" onclick="EndurtekFall()">Athuga</button>
+<br>
+<br>
+
+<h3>
+<p id="check"></p>
+</h3>
+
+<h3>
+<p id="split"></p>
+</h3>
+
+<script type="text/javascript">
+
+function EndurtekFall(){
+    console.clear(); 
+
+	var strengur = document.getElementById("streng").value;
+    console.log(strengur); 
+
+    document.getElementById("check").innerHTML = strengur; 
+
+    var split_ = strengur.split('');
+
+    console.log(split_); 
+    var i,j; 
+    var teljari = 0; 
+    var str = '';
+
+    for(i=0; i<split_.length; i++){
+        str = split_[i];
+        if(split_.indexOf('str')){
+            console.log(str);
+        }
+    }
+
+    /*for(i=0; i<split_.length; i++){
+        for(j=0; j<split_.length; j++){
+            if(split_[i] == split_[j]){
+                console.log('True');
+                teljari++; 
+            }
+            else{
+            console.log('False');
+            }    
+        }        
+    }*/
+     
+    console.log(split_.includes('a'));
+    
+    document.getElementById("split").innerHTML = split_; 
+
+    /*if(Number.isInteger(nr3)){
+    	document.getElementById("check").innerHTML = nr2 + " gengur upp í " + nr1;
+    }
+    else{
+    	document.getElementById("check").innerHTML = nr2 + " gengur ekki upp í " + nr1;
+    }*/  
+}
+</script>
+</body>
+</html>
