@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h4>Dæmi 8</h4>
+<p>
+	Búið til forrit sem spyr um nafn jólasveins. Forritið leitar síðan að viðkomandi jólasveini í listanum hér að ofan. Ef jólasveinninn er ekki til birtast skilaboðin: "Þessi jólasveinn er ekkitil" annars birtast skilaboðin:"Þá kemur xxx á morgun" þar sem "xxx" er nafn næsta jólasveins. Ef um er að ræða síðasta jólasveininn á forritið að skrifa að það sé síðasti jólasveinninn.  
+	<br><br>
+	1 Stekkjastaur 2 Giljagaur 3 Stúfur 4 Þvörusleikir 5 Pottaskefill 6 Askasleikir 7 Hurðaskellir 8 Skyrjarmur 9 Bjúgnakrækir 10  Gluggagægir 11 Gáttaþefur 12 Ketkrókur 13 Kertasníkir
+</p>
+
+<h2>Jólasveinn.</h2>
+<form>
+	<label>Nafn Jólasveins: </label>
+	<input type="text" id="jolasveinn"><br>
+</form>
+
+<br>
+<button type="button" onclick="FinnaJolaSveinn()">Athuga</button>
+<br>
+<br>
+
+<h3>
+<p id="check"></p>
+</h3>
+
+<h3>
+<p id="split"></p>
+</h3>
+
+<script type="text/javascript">
+
+function FinnaJolaSveinn(){
+    console.clear(); 
+
+	var nafn = document.getElementById("jolasveinn").value;
+
+
+    var jolaData = ['Stekkjastaur','Giljagaur','Stúfur','Þvörusleikir','Pottaskefill','Askasleikir','Hurðaskellir','Skyrjarmur','Bjúgnakrækir','Gluggagægir','Gáttaþefur','Ketkrókur','Kertasníkir']
+
+
+    var i; 
+    var nr; 
+    for(i=0; i<jolaData.length; i++){
+    	if(nafn == jolaData[i]){
+    		nr = i; 
+    		console.log("Til");
+    		console.log(nr); 
+ 	   	}
+ 	   	else{
+ 	   		console.log("Ekki til");
+ 	   	}
+    }
+
+    console.log(jolaData[nr]);
+    
+    var new_nr = nr;  
+
+    if(new_nr < 12){
+    	console.log('lol');
+    }
+
+
+	/*  
+    new_nr = nr + 1; 
+    new_nr2 = new_nr + 1;
+    
+    if(new_nr == 12){
+    	console.log("Siðasti, Kemur í daginn " + jolaData[new_nr]);
+    }
+    else{
+    	console.log("Kemur á morgun " + jolaData[new_nr]);
+
+    }
+    
+    var lysing = 'Kemur á morgun ' + jolaData[new_nr];
+
+    document.getElementById("check").innerHTML = lysing; 
+	*/
+
+/*
+    console.log(jolaData[4])
+    if(jolaData.includes(nafn)){
+    	console.log("Þá kemur ");
+    }
+    else{
+    	console.log("Jólasveinn er ekki til");
+    }
+    */
+}
+</script>
+</body>
+</html>
