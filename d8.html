@@ -27,7 +27,7 @@
 </h3>
 
 <h3>
-<p id="split"></p>
+<p id="sveinn_"></p>
 </h3>
 
 <script type="text/javascript">
@@ -36,59 +36,68 @@ function FinnaJolaSveinn(){
     console.clear(); 
 
 	var nafn = document.getElementById("jolasveinn").value;
+	
+	var nafn = nafn.toLowerCase(); 
 
+	var jolaData_lower = [];
 
-    var jolaData = ['Stekkjastaur','Giljagaur','Stúfur','Þvörusleikir','Pottaskefill','Askasleikir','Hurðaskellir','Skyrjarmur','Bjúgnakrækir','Gluggagægir','Gáttaþefur','Ketkrókur','Kertasníkir']
-
+    var jolaData = [
+    	'Stekkjastaur',
+    	'Giljagaur',
+    	'Stúfur',
+    	'Þvörusleikir',
+    	'Pottaskefill',
+    	'Askasleikir',
+    	'Hurðaskellir',
+    	'Skyrjarmur',
+    	'Bjúgnakrækir',
+    	'Gluggagægir',
+    	'Gáttaþefur',
+    	'Ketkrókur',
+    	'Kertasníkir' ];
+    
 
     var i; 
     var nr; 
-    for(i=0; i<jolaData.length; i++){
-    	if(nafn == jolaData[i]){
-    		nr = i; 
-    		console.log("Til");
-    		console.log(nr); 
- 	   	}
- 	   	else{
- 	   		console.log("Ekki til");
- 	   	}
-    }
-
-    console.log(jolaData[nr]);
+    var nr_new; 
+    var nr_new_2; 
+	var strengur1 = '';
     
-    var new_nr = nr;  
-
-    if(new_nr < 12){
-    	console.log('lol');
+    for(i = 0; i < jolaData.length; i++){
+    	jolaData_lower.push(jolaData[i].toLowerCase());
     }
 
+    console.log(jolaData_lower);
 
-	/*  
-    new_nr = nr + 1; 
-    new_nr2 = new_nr + 1;
-    
-    if(new_nr == 12){
-    	console.log("Siðasti, Kemur í daginn " + jolaData[new_nr]);
+    if(jolaData_lower.includes(nafn)){
+	    for(i=0; i<jolaData_lower.length; i++){
+	    	if(nafn == jolaData_lower[i]){
+	    		nr = i; 
+	 	   	}
+	 	   	else{
+	 	   		//console.log("þessi sveinn er ekki til!");
+	 	   	}
+	    }
+
+
+	    if(nr < 12){
+	    	nr_new = nr + 1; 
+	    	nr_new_2 = nr_new + 1; 
+	    	//console.log(jolaData_lower[nr_new] + ' kemur á morgun og næsti jólasveinn er  ' + jolaData_lower[nr_new_2] );
+   	        strengur1 = 'Þá kemur ' +jolaData[nr_new] + ' á morgun þar sem ' + jolaData[nr_new_2] + ' er nafn næsta jólasveins';
+   	        document.getElementById("sveinn_").innerHTML = strengur1;
+	    }
+	    else if(nr == 12){
+	    	document.getElementById("sveinn_").innerHTML = "Siðasti sveininn";
+	    	console.log("Siðasti sveininn");
+	    }
     }
+
     else{
-    	console.log("Kemur á morgun " + jolaData[new_nr]);
-
+    	document.getElementById("sveinn_").innerHTML = "Þessi sveinn er ekki til";
+    	console.log("þessi sveinn er ekki til ");
     }
-    
-    var lysing = 'Kemur á morgun ' + jolaData[new_nr];
 
-    document.getElementById("check").innerHTML = lysing; 
-	*/
-
-/*
-    console.log(jolaData[4])
-    if(jolaData.includes(nafn)){
-    	console.log("Þá kemur ");
-    }
-    else{
-    	console.log("Jólasveinn er ekki til");
-    }
-    */
 }
 </script>
 </body>
